@@ -3,3 +3,6 @@ A SvelteKit Component Pack, Meant for making forms With Built-In Hack Club Featu
 
 ## Features Implemented
 * DisplayName - ```<DisplayName slackId="U091DE0M4NB" />```
+* Pronouns - ```<Pronouns slackId="U091DE0M4NB" />```
+* Avatar - ```<Avatar slackId="U091DE0M4NB" />```
+* Avatar URL - ```<AvatarUrl slackId="U091DE0M4NB" />```
