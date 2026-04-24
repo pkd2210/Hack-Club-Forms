@@ -1,8 +1,9 @@
 name: Publish to npm (Trusted Publisher)
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -16,6 +17,7 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm ci
+      - run: npm test
 
   publish-npm:
     needs: build
