@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
 
-    let { slackId, value = $bindable(''), name = 'displayName'  } = $props();
+    let { slackId, value = $bindable(''), name = 'displayName', class: className = '', style = '' } = $props();
     const url = $derived(`https://cachet.dunkirk.sh/users/${slackId}`);
 
     let displayName = $state('Loading...');
@@ -26,4 +26,4 @@
         }
     }
 </script>
-<span>{displayName}</span>
+<span class={className} style={style}>{displayName}</span>

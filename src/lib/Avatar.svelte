@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
 
-    const { slackId } = $props();
+    let { slackId, class: className = '', style = '' } = $props();
     const url = $derived(`https://cachet.dunkirk.sh/users/${slackId}`);
 
     let logoUrl = $state('');
@@ -24,7 +24,7 @@
     }
 </script>
 {#if logoUrl}
-    <img src={logoUrl} alt="Slack Logo" />
+    <img src={logoUrl} alt="Slack Logo" class={className} style={style} />
 {:else}
-    <img src="https://l4-bucket.dunkirk.sh/5DjfoBI58Pfw.webp" alt="Default Avatar" />
+    <img src="https://l4-bucket.dunkirk.sh/5DjfoBI58Pfw.webp" alt="Default Avatar" class={className} style={style} />
 {/if}

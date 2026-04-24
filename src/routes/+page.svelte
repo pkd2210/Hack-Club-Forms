@@ -25,10 +25,26 @@
 <p>For slackId = U091DE0M4NB</p>
 <code>&lt;DisplayName slackId="U091DE0M4NB" /&gt;:</code> <DisplayName slackId="U091DE0M4NB" bind:value={displayName} /><br>
 <code>&lt;Pronouns slackId="U091DE0M4NB" /&gt;:</code> <Pronouns slackId="U091DE0M4NB" bind:value={pronouns} /><br>
-<code>&lt;Avatar slackId="U091DE0M4NB" /&gt;:</code> <Avatar slackId="U091DE0M4NB" /><br>
+<code>&lt;Avatar class="avatar" slackId="U091DE0M4NB" /&gt;:</code> <Avatar class="avatar" slackId="U091DE0M4NB" /><br>
 <code>&lt;AvatarUrl slackId="U091DE0M4NB" /&gt;:</code> <AvatarUrl slackId="U091DE0M4NB" bind:value={avatarUrl} /><br>
 <code>&lt;HackatimeProjects slackId="U091DE0M4NB" startingDate="2026-01-01" /&gt;:</code> <HackatimeProjects slackId="U091DE0M4NB" startingDate="2026-01-01" bind:value={hackatimeProjectsValue} /><br>
 <br>
+
+<style>
+    <!--Make the whole line a one liner so that the img wont be a line down-->
+    .info {
+        display: inline-flex;
+        align-items: center;
+    }
+    .avatar {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        object-fit: cover;
+        vertical-align: middle;
+        display: inline-block;
+    }
+</style>
 <p>Info:</p>
-<p>{displayName} - {pronouns} - {hackatimeProjectsValue} <a href={avatarUrl} target="_blank">Avatar</a></p>
+<p class="info"><Avatar class="avatar" slackId="U091DE0M4NB" /> {displayName} - {pronouns} {#if hackatimeProjectsValue !== ''} - {hackatimeProjectsValue}{/if}</p>
 </div>
