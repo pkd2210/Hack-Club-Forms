@@ -32,4 +32,5 @@ jobs:
       - run: npm install
       - run: npm ci
       # For public scoped packages, keep --access public
+      - run: npm whoami
       - run: npm publish --provenance --access public
