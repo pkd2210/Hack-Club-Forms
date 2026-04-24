@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
 
-    const { slackId } = $props();
+    let { slackId, value = $bindable('') } = $props();
     const url = $derived(`https://cachet.dunkirk.sh/users/${slackId}`);
 
     let logoUrl = $state('');
@@ -13,13 +13,16 @@
             const response = await fetch(url);
             if (!response.ok) {
                 logoUrl = '';
+                value = logoUrl;
                 throw new Error(`Slack Logo: error status: ${response.status}`);
             }
             const data = await response.json();
             logoUrl = data.imageUrl || '';   
+            value = logoUrl;
         } catch (error) {
             console.error('Slack Logo error:', error);
             logoUrl = '';
+            value = logoUrl;
         }
     }
 </script>

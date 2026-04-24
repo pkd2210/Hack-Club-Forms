@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
 
-    const { slackId, startingDate } = $props();
+    let { slackId, startingDate, value = $bindable(''), name = 'hackatimeProjects' } = $props();
     const url = $derived(`https://hackatime.hackclub.com/api/v1/users/${slackId}/stats?features=projects&start_date=${startingDate}`);
 
     let projects = $state([]);
@@ -27,7 +27,7 @@
         }
     }
 </script>
-<select>
+<select name={name} bind:value>
 {#each projects as project}
     <option value={project.name}>{project.name} - {project.text}</option>
 {/each}
