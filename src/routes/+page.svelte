@@ -4,6 +4,7 @@
     import DisplayName from '$lib/DisplayName.svelte';
     import HackatimeProjects from '$lib/HackatimeProjects.svelte';
     import Pronouns from '$lib/Pronouns.svelte';
+    import Icon from '$lib/Icon.svelte';
 
     let hackatimeProjectsValue = $state('');
     let displayName = $state('');
@@ -28,6 +29,7 @@
 <code>&lt;Avatar class="avatar" slackId="U091DE0M4NB" /&gt;:</code> <Avatar class="avatar" slackId="U091DE0M4NB" /><br>
 <code>&lt;AvatarUrl slackId="U091DE0M4NB" /&gt;:</code> <AvatarUrl slackId="U091DE0M4NB" bind:value={avatarUrl} /><br>
 <code>&lt;HackatimeProjects slackId="U091DE0M4NB" startingDate="2026-01-01" /&gt;:</code> <HackatimeProjects slackId="U091DE0M4NB" startingDate="2026-01-01" bind:value={hackatimeProjectsValue} /><br>
+<code>&lt;Icon glyph="google" color="blue" size=40 /&gt;:</code> <Icon glyph="google" color="blue" size=40 />
 <br>
 
 <style>

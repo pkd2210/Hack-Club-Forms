@@ -8,6 +8,7 @@ A SvelteKit Component Pack, Meant for making forms With Built-In Hack Club Featu
 * Avatar - ```<Avatar slackId="U091DE0M4NB" />```
 * Avatar URL - ```<AvatarUrl slackId="U091DE0M4NB" bind:value={avatarUrl} />```
 * Hackatime Projects - ```<HackatimeProjects slackId="U091DE0M4NB" startingDate="2026-01-01" bind:value={hackatimeProjectsValue} />```
+* Icon - ```<Icon glyph="google" color="blue" size=40 />```
 ## When adding componnents
 * Add in readme
 * run npm version patch
